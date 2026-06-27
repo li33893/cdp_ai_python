@@ -32,6 +32,9 @@ try:
     print("请求成功！", resp.status_code)
 except requests.exceptions.HTTPError as e:
     print("请求出错了！", e)
+#raise_for_status() —— 负责制造异常（看到坏状态码就扔出去）
+# except HTTPError —— 负责接住异常（处理后续）
+# 缺了前者，后者就是个永远不触发的摆设。
 
 # 失败的
 try:

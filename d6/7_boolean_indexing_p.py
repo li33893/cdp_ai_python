@@ -15,7 +15,10 @@
 #         "age": [25, 17, 30, 20]}
 # df = pd.DataFrame(data)
 
+# # df["name_len3"] = df["name"].apply(lambda x:len(x)>3)
+# df_filtered = df[(df["name"].apply(lambda x: len(x)>3)) & (df["age"]>=18)]
 
+# print(df_filtered)
 
 #  3. 加强题：
 import pandas as pd
@@ -28,3 +31,6 @@ data = {
 df = pd.DataFrame(data)
 # 筛出：有货（in_stock 为 True）、价格低于 3.0、且名字长度超过 4 个字母的行，打印结果。
 
+final_pro = df[(df["in_stock"]==True) & (df["price"]<3) & (df["product"].apply(lambda x: len(x)>4))]
+
+print(final_pro)

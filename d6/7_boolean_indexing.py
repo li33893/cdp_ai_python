@@ -7,7 +7,7 @@ Boolean Indexing — 用条件筛选行
 import pandas as pd
 
 data = {"name": ["Alice", "Bob", "Charlie"], "age": [25, 17, 30]}
-df = pd.DataFrame(data)
+df   = pd.DataFrame(data)
 
 df[df["age"] >= 18]
 # 结果：

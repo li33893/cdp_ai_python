@@ -2,3 +2,6 @@
 
 fruits = ["apple", "banana", "cherry", "blueberry"]
 
+result = [fruit.upper() for fruit in fruits if "b" in fruit]
+
+print(result)

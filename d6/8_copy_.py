@@ -1,5 +1,5 @@
 """
-
+！！！！现在这个版本已经没有了，pandas2.0以后不加copy也没事了
 .copy() — 创建独立副本
 筛完数据之后，你通常会把结果存进一个新变量：
 result = df[df["age"] >= 18]
@@ -22,8 +22,9 @@ data = {
 df = pd.DataFrame(data)
 # 筛出：有货（in_stock 为 True）、价格低于 3.0、且名字长度超过 4 个字母的行，打印结果。
 
-result = df[(df["in_stock"] == True) & (df["price"]<3.0) & (df["product"].apply(len)>4)].copy()
+result = df[(df["in_stock"] == True) & (df["price"]<3.0) & (df["product"].apply(len)>4)]
 
 result["label"] = "selected"
 
 print(result)
+print(df)

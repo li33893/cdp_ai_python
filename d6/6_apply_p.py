@@ -12,3 +12,9 @@ df = pd.DataFrame(data)
 
 # 用 .apply() 加一列 name_len，存每个名字的字符数
 
+def len_count (text):
+    return len(text)
+
+df["name_len"] = df["name"].apply(len_count)
+
+print(df)

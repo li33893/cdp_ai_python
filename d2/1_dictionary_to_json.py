@@ -9,5 +9,6 @@ pythonlog = {
 }
 
 with open("log.json", "w", encoding="utf-8") as log:
+    # 带 = 的参数因为有名字，顺序无所谓。
     json.dump(pythonlog, log, ensure_ascii=False, indent=2)
 

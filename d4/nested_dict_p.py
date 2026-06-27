@@ -3,12 +3,19 @@
 nested dictionary 嵌套字典
 
 """
+import json
 # 1. 做一个这样的嵌套字典（至少有一个嵌套过程用了另一种方法）
 # {'anxiety': 
 #   {'202501': 
 #     {'count': 10, 'hit_rate': 0.15}
 #   }
 # }
+log                      = {}
+log["anxiety"]           = {}
+log["anxiety"]["202501"] = {"count":10, "hit_rate":0.15}
+# log["anxiety"]["202501"]["count"] = 10
+
+print(json.dumps(log, indent=2))
 
 
 

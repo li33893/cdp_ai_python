@@ -3,3 +3,4 @@ text = "  ChatGPT really Helped Me  "
 
 # 全小写版本（去掉头尾空格）
 # 这句话有几个词
+

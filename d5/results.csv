@@ -1,0 +1,4 @@
+name,score,comment,name_len,comment_valid
+Alice,82,doing well,5,True
+Charlie,91,excellent,7,True
+Eve,73,needs improvement,3,True

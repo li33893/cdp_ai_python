@@ -16,5 +16,6 @@ kappa = 0.841234
 # 命中率：67.9%
 # Kappa：0.841
 
+# 都是四舍五入，不是直接抹掉
 print(f"{hit_rate:.1%}")
 print(f"{kappa:.3f}")

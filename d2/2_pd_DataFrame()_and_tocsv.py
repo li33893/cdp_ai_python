@@ -14,6 +14,30 @@
 
     to_csv():把list变成csv文件
 
+
+
+
+    用 os.path.dirname() 再套一层就能往上走，或者用 .. 拼路径：
+
+    import os
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # 上一级目录
+    parent_dir = os.path.dirname(current_dir)
+
+    # 上一级里的某个子文件夹，比如 output/
+    output_path = os.path.join(parent_dir, "output", "sentences.csv")
+
+    # 如果那个文件夹不存在，先创建它
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    df.to_csv(output_path, index=False, encoding="utf-8-sig")
+    也可以用 .. 直接写，效果一样：
+
+
+    output_path = os.path.join(current_dir, "..", "output", "sentences.csv")
+
 """
 
 

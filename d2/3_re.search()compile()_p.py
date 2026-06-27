@@ -17,4 +17,15 @@
 # https://httpbin.org/get?text=I+use+AI+tools+every+day
 # 把返回的 JSON 里 args 字段的 text 值取出来，用 re.compile() 判断它有没有包含独立的单词 "AI"，打印 True 或 False。
 
+import requests
+import re
+
+resp    = requests.get("https://httpbin.org/get?text=I+use+AI+tools+every+day")
+data    = resp.json()
+body    = data["args"]["text"]
+pattern = re.compile(r"\bAI\b", re.IGNORECASE)
+flg     = bool(pattern.search(body))
+print(flg)
+
+
 
