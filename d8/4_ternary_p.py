@@ -1,0 +1,1 @@
+# 定义 temperature = 38，用三元表达式赋值给变量 status：温度大于 37.5 就是 "fever"，否则是 "normal"，打印 status
