@@ -4,7 +4,7 @@
 
 把一个列表转成集合，集合的特点是：自动去重、无顺序。最常用的场景是快速检查某个值是否已经出现过。
 
-pythonnumbers = [1, 2, 2, 3, 3, 3]
+numbers = [1, 2, 2, 3, 3, 3]
 unique = set(numbers)
 print(unique)   # {1, 2, 3}，重复的被去掉了
 
@@ -12,12 +12,12 @@ print(unique)   # {1, 2, 3}，重复的被去掉了
 02 集合运算
 
 | 是并集，把两个集合合并，去重：
-pythona = {1, 2, 3}
+a = {1, 2, 3}
 b = {3, 4, 5}
 print(a | b)   # {1, 2, 3, 4, 5}
 
 in 检查某个值是否在集合里，和列表的 in 语法一样，但集合快得多：
-pythonseen = {10, 20, 30}
+seen = {10, 20, 30}
 print(10 in seen)   # True
 print(99 in seen)   # False
 
