@@ -59,5 +59,5 @@ posts_by_sub = {
 # 用 pd.crosstab，行是 risk_level，列是 subreddit，margins=True
 # 用 .rename() 把 all_posts 里的 risk_level 列改名成 llm_risk_level
 
-list = list(posts_by_sub)
-print(list)
+for post in posts_by_sub:
+    post
