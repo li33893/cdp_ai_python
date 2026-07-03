@@ -1,8 +1,5 @@
 # Python 语法速查索引
 
-> 用途：写代码时想不起某个语法 → `Ctrl+F` 搜关键词 → 看一眼「干嘛的」确认 → 去对应 `d几` 文件夹翻自己写过的代码。
-> 状态标记：无标记 = 已学；🔲 = 跳过/未学。
-
 ---
 
 ## 网络请求
@@ -53,11 +50,11 @@
 | `import` | 引入别的库/模块 | d6 |
 | `if __name__=="__main__"` | 只在直接运行时执行的入口 | d6 |
 | `sorted(key=)` + `.items()` | 排序（可自定义规则）/ 遍历字典 | d10 |
-| `zip()` | 把多个列表按位置配对 | 🔲 d11 |
-| 函数类型注解 | `def f(x: str) -> dict:` 标参数/返回类型 | 🔲 d11 |
-| `**` 幂运算符 | 求幂，如 `2 ** 3 = 8`（指数退避用） | 🔲 d11 |
-| `time.time()` | 取当前时间戳，用来计时 | 🔲 d11 |
-| `Counter` | 快速统计每个元素出现次数 | 🔲 d12 |
+| `zip()` | 把多个列表按位置配对 | d11 |
+| 函数类型注解 | `def f(x: str) -> dict:` 标参数/返回类型 | d11 |
+| `**` 幂运算符 | 求幂，如 `2 ** 3 = 8`（指数退避用） | d11 |
+| `time.time()` | 取当前时间戳，用来计时 | d11 |
+| `Counter` | 快速统计每个元素出现次数 | d12 |
 
 ---
 
@@ -121,36 +118,18 @@
 
 ---
 
-## numpy + sklearn（🔲 d12 未学）
+## numpy + sklearn（d12）
 
 | 语法 | 干什么的（简单概括） | 在 d 几 |
 |------|------------------|--------|
-| `np.array()` | 建 numpy 数组，支持整体运算 | 🔲 d12 |
-| 布尔数组运算 | `r1 == r2` 逐元素比较返回数组 | 🔲 d12 |
-| `np.zeros((m,n))` | 生成全 0 数组 | 🔲 d12 |
-| `np.sum()` | 求和 | 🔲 d12 |
-| `np.sqrt()` | 开方 | 🔲 d12 |
-| `np.trace()` | 矩阵对角线之和 | 🔲 d12 |
-| `axis` 参数 | 控制按行(1)还是按列(0)算 | 🔲 d12 |
-| 二维索引 `cm[i][j]` | 取二维数组第 i 行 j 列 | 🔲 d12 |
-| `cohen_kappa_score` | 算 Cohen's Kappa 一致性 | 🔲 d12 |
-| `confusion_matrix` | 生成混淆矩阵 | 🔲 d12 |
+| `np.array()` | 建 numpy 数组，支持整体运算 | d12 |
+| 布尔数组运算 | `r1 == r2` 逐元素比较返回数组 | d12 |
+| `np.zeros((m,n))` | 生成全 0 数组 | d12 |
+| `np.sum()` | 求和 | d12 |
+| `np.sqrt()` | 开方 | d12 |
+| `np.trace()` | 矩阵对角线之和 | d12 |
+| `axis` 参数 | 控制按行(1)还是按列(0)算 | d12 |
+| 二维索引 `cm[i][j]` | 取二维数组第 i 行 j 列 | d12 |
+| `cohen_kappa_score` | 算 Cohen's Kappa 一致性 | d12 |
+| `confusion_matrix` | 生成混淆矩阵 | d12 |
 
----
-
-## 状态一览
-
-| 天 | 主题 | 状态 |
-|----|------|------|
-| d1 | 网络请求基础 + 时间 + 异常 + 翻页 | ✅ |
-| d2 | json + DataFrame/csv + 正则 | ✅ |
-| d3 | f-string + json.loads + try/except + payload + POST | ✅ |
-| d4 | 列表推导式 + 嵌套字典 + None 运算 | ✅ |
-| d5 | f-string 格式化 + lambda + 默认值 + str + tuple | ✅ |
-| d6 | import + 入口 + with open + apply + 布尔索引 + copy | ✅ |
-| d7 | read_csv + iterrows + JSONL | ✅ |
-| d8 | Python 基础补完 | ✅ |
-| d9 | pandas 筛选与清洗 | ✅ |
-| d10 | pandas 合并与统计 | ✅ |
-| d11 | 工程工具 + zip | ⚠️ 学到第4个（argparse/os.path/sys.exit/resp.headers.get），后4个跳过 |
-| d12 | numpy + sklearn + 综合 | 🔲 未开始 |
