@@ -32,15 +32,34 @@ llm_b = pd.DataFrame({"post_id": ["p4", "p5"], "llm_source": ["Primary", "Parall
 human = pd.DataFrame({"post_id": ["p1", "p3", "p4", "p5"], "human_source": ["Primary", "NM", "Primary", "Solo"]})
 # 把 llm_a、llm_b 上下合并成 all_llm（重置 index）；再和 human 按 post_id 合并，只保留两边都有的，叫 merged；算出 merged 里 llm_source 和 human_source 一致的条数，print。
 all_llm = pd.concat([llm_a, llm_b]).reset_index(drop=True)
-merged  = all_llm(human, on="post_id", how="inner").reindex()
+merged  = all_llm.merge(human, on="post_id", how="inner")
+hu_li   = merged["human_source"].tolist()
+llm     = merged["llm_source"].tolist()
+agreed  = sum(h == l for h, l in zip(hu_li, llm))
 
-
-agreed = sum(h["huamn_source"] == l["llm-source"] for h, l in (human, merged))
-
+print(f"agreed:{agreed}")
 
 
 # 题目4
-# 已知 done = 300、total = 1200。写计时代码算出经过的秒数 elapsed（开始记时刻、中间 sleep 1 秒、结束记时刻、相减）；用 elapsed 和 done 算每秒处理几条存进 rate，防止除数太小导致出问题；用 rate 和剩余条数算出预计剩余秒数 eta，print。
+# 已知 done = 300、total = 1200。写计时代码算出经过的秒数 elapsed（开始记时刻、中间 sleep 1 秒、结束记时刻、相减）；
+# 用 elapsed 和 done 算每秒处理几条存进 rate，防止除数太小导致出问题；用 rate 和剩余条数算出预计剩余秒数 eta，print。
+import time
+
+total = 1200
+done  = 300
+
+start   = time.time()
+time.sleep(1)
+end     = time.time()
+elapsed = end - start
+
+rate      = done / max(elapsed, 1)
+remaining = total - done
+eta       = remaining / rate
+
+print(eta)
+
+
 
 # 题目5
 import pandas as pd
@@ -57,3 +76,17 @@ df = pd.DataFrame({
 # 找出 coded 里 llm_source 出现次数最多的类别是什么、几次，分别 print
 # 交叉表：行 llm_source、列 subreddit、带 margins，print
 # 把 coded 的 llm_source 列改名成 source_final，print 改名后的列名
+
+coded   = df[df["llm_excluded"] == False].reset_index(drop=True)
+
+llm_count = coded["llm_source"].value_counts().sort_values()
+print(f"最多的source是：{llm_count.index[0]},出现次数:{llm_count.iloc[0]}")
+
+cross = pd.crosstab(coded["llm_source"], coded["subreddit"], margins=True)
+print(cross)
+
+renamed = coded.rename(columns={"llm_source":"source_final"})
+
+print(renamed)
+
+
