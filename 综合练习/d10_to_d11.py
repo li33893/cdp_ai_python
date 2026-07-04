@@ -31,7 +31,11 @@ llm_a = pd.DataFrame({"post_id": ["p1", "p2", "p3"], "llm_source": ["Primary", "
 llm_b = pd.DataFrame({"post_id": ["p4", "p5"], "llm_source": ["Primary", "Parallel"]})
 human = pd.DataFrame({"post_id": ["p1", "p3", "p4", "p5"], "human_source": ["Primary", "NM", "Primary", "Solo"]})
 # 把 llm_a、llm_b 上下合并成 all_llm（重置 index）；再和 human 按 post_id 合并，只保留两边都有的，叫 merged；算出 merged 里 llm_source 和 human_source 一致的条数，print。
-pd.merge([llm_a, llm_b])
+all_llm = pd.concat([llm_a, llm_b]).reset_index(drop=True)
+merged  = all_llm(human, on="post_id", how="inner").reindex()
+
+
+agreed = sum(h["huamn_source"] == l["llm-source"] for h, l in (human, merged))
 
 
 
