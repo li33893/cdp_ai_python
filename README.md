@@ -135,3 +135,13 @@
 | `cohen_kappa_score` | 算 Cohen's Kappa 一致性 | d12 |
 | `confusion_matrix` | 生成混淆矩阵 | d12 |
 
+---
+
+### gitignore原理
+| 你写的 | 匹配什么 |
+|-------|----------|
+| config_local.py |项目里任意层级、任意目录下叫这个名字的文件都忽略（包括 src/config_local.py）|
+| /config_local.py |开头带 /，只忽略根目录下的，src/ 里的不忽略|
+|data/ |结尾带 /，忽略叫 data 的目录及其全部内容|
+|*.pyc* |通配，忽略所有 .pyc 结尾的文件|
+|src/*.csv|只忽略 src/ 下第一层的 .csv|
