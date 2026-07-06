@@ -137,7 +137,8 @@
 
 ---
 
-### gitignore原理
+## gitignore原理
+
 | 你写的 | 匹配什么 |
 |-------|----------|
 | config_local.py |项目里任意层级、任意目录下叫这个名字的文件都忽略（包括 src/config_local.py）|
