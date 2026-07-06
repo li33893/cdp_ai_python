@@ -95,6 +95,8 @@
 | `.reindex(fill_value=0)` | 重排行列，缺的补默认值 | d10 |
 | `.value_counts().index[0]` | 取出现最多的那个值 | d10 |
 | `.iloc[0]` | 按位置取第几行 | d10 |
+| `.mean()`  | 取平均数 | d13 |
+| `sereis（概）` | 什么是series大概讲解 | d13 | 
 
 ---
 
