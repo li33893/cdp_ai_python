@@ -11,7 +11,7 @@
 | `requests.post()` | 向网址发 POST 请求，提交数据 | d3 |
 | `payload` | 打包成 dict 的请求体，POST 时发出去 | d3 |
 | `resp.headers.get()` | 从响应头里取某个字段（如 retry-after） | d11 |
-
+| `.json()` | 解析resp里面的东西成dict | d13|
 ---
 
 ## 文件与数据格式
@@ -25,7 +25,7 @@
 | `pd.read_csv()` | 读 csv 文件成表格 | d7 |
 | `with open("r")` | 安全地读文件，自动关 | d6 / d8 |
 | `with open("a")` | 追加写文件（不覆盖原内容） | d8 |
-| `JSONL 逐行读写` | 一行一个 json，适合断点续跑 | d8 |
+| `JSONL 逐行读写` | 一行一个 json，适合断点续跑 | d8 withopen |
 | `f-string` | 用 `f"{变量}"` 把变量塞进字符串 | d3 |
 | `f-string 格式化` | 控制小数位/对齐，如 `f"{x:.2f}"` | d5 |
 
@@ -55,7 +55,7 @@
 | `**` 幂运算符 | 求幂，如 `2 ** 3 = 8`（指数退避用） | d11 |
 | `time.time()` | 取当前时间戳，用来计时 | d11 |
 | `Counter` | 快速统计每个元素出现次数 | d12 |
-
+| `replace()` | 替代某个string | d13 |
 ---
 
 ## 异常处理
@@ -97,6 +97,8 @@
 | `.iloc[0]` | 按位置取第几行 | d10 |
 | `.mean()`  | 取平均数 | d13 |
 | `series（概）` | 什么是series大概讲解 | d13 (.mean()) | 
+| `iterrows()` | 什么是series大概讲解 | d7 | 
+| `to_dict()` | series转化为dict，我的代码里跟在value_counts()后面| d13 |
 
 ---
 
