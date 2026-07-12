@@ -25,7 +25,7 @@
 | `pd.read_csv()` | 读 csv 文件成表格 | d7 |
 | `with open("r")` | 安全地读文件，自动关 | d6 / d8 |
 | `with open("a")` | 追加写文件（不覆盖原内容） | d8 |
-| `JSONL 逐行读写` | 一行一个 json，适合断点续跑 | d8 withopen |
+| `JSONL 逐行读写 + f.write()` | 一行一个 json，适合断点续跑 | d8 withopen |
 | `f-string` | 用 `f"{变量}"` 把变量塞进字符串 | d3 |
 | `f-string 格式化` | 控制小数位/对齐，如 `f"{x:.2f}"` | d5 |
 
