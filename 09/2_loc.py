@@ -16,6 +16,9 @@ df.loc[mask, "subreddit"]
 df.loc[mask, "note"] = "高风险已排除"
 这样只会修改 mask 为 True 的那些行的 note 列,其他行不动。
 
+其实也可以是行列选择：
+df.loc[行选择, 列选择]
+
 """
 
 import pandas as pd

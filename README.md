@@ -28,6 +28,7 @@
 | `JSONL 逐行读写 + f.write()` | 一行一个 json，适合断点续跑 | d8 withopen |
 | `f-string` | 用 `f"{变量}"` 把变量塞进字符串 | d3 |
 | `f-string 格式化` | 控制小数位/对齐，如 `f"{x:.2f}"` | d5 |
+| `f-string的align` | 控制表头的对齐方式和格子大小 | d13 |
 
 ---
 
@@ -56,6 +57,7 @@
 | `time.time()` | 取当前时间戳，用来计时 | d11 |
 | `Counter` | 快速统计每个元素出现次数 | d12 |
 | `replace()` | 替代某个string | d13 |
+| `.sorted()` | 原地更改list，不是.sorted那种原地改完返回新的 | d13 |
 ---
 
 ## 异常处理
@@ -99,6 +101,8 @@
 | `series（概）` | 什么是series大概讲解 | d13 (.mean()) | 
 | `iterrows()` | 什么是series大概讲解 | d7 | 
 | `to_dict()` | series转化为dict，我的代码里跟在value_counts()后面| d13 |
+| `group_by()`| 分组做操作 | d14 |
+| `size()` | 把每行出现的次数进行总和 | d14 |
 
 ---
 

@@ -35,6 +35,30 @@ df["risk_level"].value_counts().sort_values(ascending=True)
 ascending 这个参数你应该在别处见过(比如 sorted(key=) 之类),True 是从小到大,False 是从大到小。
 
 
+sort_value还可以列表打包：
+这是我在统计各个组合出现的频次的时候遇到的
+
+def create_code_combination_count (input_df):
+
+    frequency = (
+        input_df
+        .groupby([
+            "subreddit",
+            "llm_timeframe",
+            "llm_usage_intent",
+            "llm_source"
+        ])
+        .size()
+        .reset_index(name="count")
+        .sort_values(
+            ["subreddit", "count"],
+            ascending=[False, False]
+       )
+    )
+
+    return frequency
+
+
 """
 
 import pandas as pd
